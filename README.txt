@@ -1,1 +1,0 @@
-Tests that check that mock and pytest play nicely together
