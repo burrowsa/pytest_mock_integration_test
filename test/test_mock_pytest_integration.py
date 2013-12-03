@@ -2,8 +2,7 @@ import subprocess
 import os
 
 def test_test_names_are_not_corrupted_by_patching():
-    py_test = os.path.join(os.environ["VIRTUAL_ENV"], "scripts", "py.test")
-    result = subprocess.check_output([py_test, "-v", "test_example.py"]).split(os.linesep)
+    result = subprocess.check_output([os.environ["PYTEST_EXECUTABLE"], "-v", "test_example.py"]).split(os.linesep)
     assert result[0] == "============================= test session starts ============================="
     assert result[2] == "collecting ... collected 3 items"
     assert result[3] == ""
