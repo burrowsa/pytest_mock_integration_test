@@ -1,5 +1,6 @@
 from mock import patch, sentinel, Mock
 
+
 class M(object):
     pass
 
