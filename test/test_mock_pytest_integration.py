@@ -8,7 +8,7 @@ def check_output(*args, **kwargs):
 
     process = subprocess.Popen(*args, stdout=subprocess.PIPE, **kwargs)
     output, unused_err = process.communicate()
-    retcode = process.poll()
+    retcode = process.wait()
     if retcode:
         raise subprocess.CalledProcessError(retcode, args[0])
     return output
