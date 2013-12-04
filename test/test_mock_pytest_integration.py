@@ -15,8 +15,8 @@ def check_output(*args, **kwargs):
 
 
 def test_test_names_are_not_corrupted_by_patching():
-    result = str(check_output([os.environ["PYTEST_EXECUTABLE"], "-v", "test/test_example.py"]))
+    result = check_output([os.environ["PYTEST_EXECUTABLE"], "-v", "test/test_example.py"])
     lines = result.splitlines()
-    assert lines[4].endswith("test_one PASSED")
-    assert lines[5].endswith("test_two PASSED")
-    assert lines[6].endswith("test_three PASSED")
+    assert str(lines[4]).endswith("test_one PASSED")
+    assert str(lines[5]).endswith("test_two PASSED")
+    assert str(lines[6]).endswith("test_three PASSED")
