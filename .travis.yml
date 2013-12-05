@@ -7,6 +7,6 @@ python:
   - "pypy"
 # command to install dependencies
 install:
-  - pip install -r requirements.txt --index-url http://pypi.burrowsa.com/simple/ --extra-index-url https://pypi.python.org/simple/
+  - pip install -r requirements.txt -U --index-url https://devpi.net/hpk/dev/ --extra-index-url https://pypi.python.org/simple/
 # command to run tests
 script: PYTEST_EXECUTABLE=$(which py.test) py.test
